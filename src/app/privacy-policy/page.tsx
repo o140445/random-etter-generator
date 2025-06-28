@@ -4,7 +4,7 @@ export const metadata = {
     title: 'Privacy Policy | Random Letter Generator',
     description: 'Read our privacy policy to learn how we collect, use, and protect your information on Random Letter Generator.',
     alternates: {
-      canonical: "https://random-letter-generator.com/privacy-policy",
+      canonical: "https://www.random-letter-generator.com/privacy-policy",
     },
   };
   

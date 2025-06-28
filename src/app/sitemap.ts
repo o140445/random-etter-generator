@@ -3,43 +3,43 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://random-letter-generator.com/',
+      url: 'https://www.random-letter-generator.com/',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://random-letter-generator.com/blog',
+      url: 'https://www.random-letter-generator.com/blog',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://random-letter-generator.com/blog/why-use-a-random-letter-generator',
+      url: 'https://www.random-letter-generator.com/blog/why-use-a-random-letter-generator',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.7,
     },
     {
-      url: 'https://random-letter-generator.com/blog/how-to-generate-random-letters-in-python',
+      url: 'https://www.random-letter-generator.com/blog/how-to-generate-random-letters-in-python',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.7,
     },
     {
-      url: 'https://random-letter-generator.com/blog/random-letters-vs-random-words',
+      url: 'https://www.random-letter-generator.com/blog/random-letters-vs-random-words',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.7,
     },
     {
-      url: 'https://random-letter-generator.com/privacy-policy',
+      url: 'https://www.random-letter-generator.com/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
     },
     {
-      url: 'https://random-letter-generator.com/terms-of-service',
+      url: 'https://www.random-letter-generator.com/terms-of-service',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,

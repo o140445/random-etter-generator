@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Random Letters vs. Random Words: Which to Use? | Blog | Random Letter Generator',
   description: 'Learn the difference between random letters and random words, and when to use each.',
   alternates: {
-    canonical: "https://random-letter-generator.com/blog/random-letters-vs-random-words",
+    canonical: "https://www.random-letter-generator.com/blog/random-letters-vs-random-words",
   },
 };
 

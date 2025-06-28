@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://random-letter-generator.com'),
+  metadataBase: new URL('https://www.random-letter-generator.com'),
   openGraph: {
     title: "Random Letter Generator | Instantly Generate Letters & Numbers Online",
     description: "Free online random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
-    url: 'https://random-letter-generator.com',
+    url: 'https://www.random-letter-generator.com',
     siteName: 'Random Letter Generator',
     locale: 'en_US',
     type: 'website',

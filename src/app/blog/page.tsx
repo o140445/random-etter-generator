@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Blog | Random Letter Generator',
   description: 'Read articles about random letter generation, password security, and more. Stay updated with our latest blog posts.',
   alternates: {
-    canonical: "https://random-letter-generator.com/blog",
+    canonical: "https://www.random-letter-generator.com/blog",
   },
 };
 

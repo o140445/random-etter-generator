@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Why Use a Random Letter Generator? | Blog | Random Letter Generator',
   description: 'Discover the benefits and use cases of random letter generators for passwords, games, and more.',
   alternates: {
-    canonical: "https://random-letter-generator.com/blog/why-use-a-random-letter-generator",
+    canonical: "https://www.random-letter-generator.com/blog/why-use-a-random-letter-generator",
   },
 };
 

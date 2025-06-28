@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://random-letter-generator.com/sitemap.xml',
+    sitemap: 'https://www.random-letter-generator.com/sitemap.xml',
   }
 } 

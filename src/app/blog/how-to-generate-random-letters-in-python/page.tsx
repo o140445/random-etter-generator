@@ -4,7 +4,7 @@ export const metadata = {
   title: 'How to Generate Random Letters in Python | Blog | Random Letter Generator',
   description: 'A step-by-step guide with code examples for generating random letters in Python.',
   alternates: {
-    canonical: "https://random-letter-generator.com/blog/how-to-generate-random-letters-in-python",
+    canonical: "https://www.random-letter-generator.com/blog/how-to-generate-random-letters-in-python",
   },
 };
 

@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Terms of Service | Random Letter Generator',
   description: 'Read our terms of service to understand your rights and responsibilities when using Random Letter Generator.',
   alternates: {
-    canonical: "https://random-letter-generator.com/terms-of-service",
+    canonical: "https://www.random-letter-generator.com/terms-of-service",
   },
 };
 

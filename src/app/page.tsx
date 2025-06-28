@@ -3,7 +3,7 @@ import RandomLetterGenerator from '@/components/RandomLetterGenerator';
 
 export const metadata = {
   alternates: {
-    canonical: "https://random-letter-generator.com/",
+    canonical: "https://www.random-letter-generator.com/",
   },
 };
 
