@@ -69,7 +69,6 @@ export default function RandomLetterGenerator() {
 
   useEffect(() => {
     generateRandomString();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
