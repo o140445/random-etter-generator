@@ -1,10 +1,11 @@
+import Link from 'next/link';
+import RandomLetterGenerator from '@/components/RandomLetterGenerator';
+
 export const metadata = {
   alternates: {
     canonical: "https://random-letter-generator.com/",
   },
 };
-
-import RandomLetterGenerator from '@/components/RandomLetterGenerator';
 
 export default function Home() {
   return (
@@ -65,9 +66,9 @@ print(''.join(random.choices(string.ascii_lowercase, k=5)))</code></pre>
         </section>
       </div>
       <footer className="text-center py-6 text-sm text-gray-500">
-        <a href="/blog" className="mx-2 hover:underline">Blog</a>|
-        <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>|
-        <a href="/terms-of-service" className="mx-2 hover:underline">Terms of Service</a>
+        <Link href="/blog" className="mx-2 hover:underline">Blog</Link>|
+        <Link href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</Link>|
+        <Link href="/terms-of-service" className="mx-2 hover:underline">Terms of Service</Link>
       </footer>
     </main>
   );

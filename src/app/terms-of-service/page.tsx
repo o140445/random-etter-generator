@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Terms of Service | Random Letter Generator',
   description: 'Read our terms of service to understand your rights and responsibilities when using Random Letter Generator.',
@@ -10,7 +12,7 @@ export default function TermsOfService() {
   return (
     <main className="max-w-3xl mx-auto py-12 px-4">
       <div className="mb-6">
-        <a href="/" className="text-blue-600 hover:underline">&larr; Back to Home</a>
+        <Link href="/" className="text-blue-600 hover:underline">&larr; Back to Home</Link>
       </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Terms of Service</h1>
       <p className="mb-4 text-gray-700 dark:text-gray-300">Last updated: June 2025</p>

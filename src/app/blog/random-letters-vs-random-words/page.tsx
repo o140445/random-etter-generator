@@ -1,13 +1,18 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Random Letters vs. Random Words: Which to Use? | Blog | Random Letter Generator',
-  description: 'Learn the difference between random letters and random words, and when to use each.'
+  description: 'Learn the difference between random letters and random words, and when to use each.',
+  alternates: {
+    canonical: "https://random-letter-generator.com/blog/random-letters-vs-random-words",
+  },
 };
 
 export default function RandomLettersVsRandomWords() {
   return (
     <main className="max-w-3xl mx-auto py-12 px-4">
       <div className="mb-6">
-        <a href="/blog" className="text-blue-600 hover:underline">&larr; Back to Blog</a>
+        <Link href="/blog" className="text-blue-600 hover:underline">&larr; Back to Blog</Link>
       </div>
       <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Random Letters vs. Random Words: Which to Use?</h1>
       <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -32,7 +37,7 @@ export default function RandomLettersVsRandomWords() {
       </p>
       <h2 className="text-xl font-semibold mt-8 mb-2">Try It Yourself</h2>
       <p className="mb-4 text-gray-700 dark:text-gray-300">
-        Need random letters? Try our <a href="/" className="text-blue-600 hover:underline">Random Letter Generator</a>.<br />
+        Need random letters? Try our <Link href="/" className="text-blue-600 hover:underline">Random Letter Generator</Link>.<br />
         Want random words? Check out online random word generators for more options!
       </p>
     </main>

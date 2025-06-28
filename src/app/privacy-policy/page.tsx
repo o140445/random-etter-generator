@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
     title: 'Privacy Policy | Random Letter Generator',
     description: 'Read our privacy policy to learn how we collect, use, and protect your information on Random Letter Generator.',
@@ -10,12 +12,12 @@ export const metadata = {
     return (
       <main className="max-w-3xl mx-auto py-12 px-4">
         <div className="mb-6">
-          <a href="/" className="text-blue-600 hover:underline">&larr; Back to Home</a>
+          <Link href="/" className="text-blue-600 hover:underline">&larr; Back to Home</Link>
         </div>
         <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Privacy Policy</h1>
         <p className="mb-4 text-gray-700 dark:text-gray-300">Last updated: June 2025</p>
         <p className="mb-4 text-gray-700 dark:text-gray-300">
-          This Privacy Policy describes how Random Letter Generator ("we", "us", or "our") collects, uses, and protects your information when you use our website.
+          This Privacy Policy describes how Random Letter Generator (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and protects your information when you use our website.
         </p>
         <h2 className="text-xl font-semibold mt-8 mb-2">Information We Collect</h2>
         <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-gray-300">
