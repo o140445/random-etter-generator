@@ -27,13 +27,13 @@ export default function TermsOfService() {
       <h2 className="text-xl font-semibold mt-8 mb-2">3. Intellectual Property</h2>
       <p className="mb-4 text-gray-700 dark:text-gray-300">All content on this website is the property of Random Letter Generator or its licensors. You may not copy, reproduce, or distribute any content without permission.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">4. Disclaimer</h2>
-      <p className="mb-4 text-gray-700 dark:text-gray-300">This website is provided "as is" without warranties of any kind. We do not guarantee the accuracy or reliability of the generated content.</p>
+      <p className="mb-4 text-gray-700 dark:text-gray-300">This website is provided &quot;as is&quot; without warranties of any kind. We do not guarantee the accuracy or reliability of the generated content.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">5. Limitation of Liability</h2>
       <p className="mb-4 text-gray-700 dark:text-gray-300">We are not liable for any damages arising from the use or inability to use this website.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">6. Changes to Terms</h2>
       <p className="mb-4 text-gray-700 dark:text-gray-300">We may update these Terms of Service at any time. Continued use of the website constitutes acceptance of the new terms.</p>
       <h2 className="text-xl font-semibold mt-8 mb-2">7. Contact</h2>
-      <p className="mb-4 text-gray-700 dark:text-gray-300">If you have any questions about these Terms, please contact us. <a href="mailto:support@random-letter-generator.com" className="text-blue-600 hover:underline">support@random-letter-generator.com</a></p>
+      <p className="mb-4 text-gray-700 dark:text-gray-300">If you have any questions about these Terms, please contact us.</p>
     </main>
   );
 } 

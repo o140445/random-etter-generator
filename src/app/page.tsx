@@ -50,13 +50,13 @@ print(random.choice(string.ascii_letters))</code></pre>
             </div>
             <div>
               <h3 className="font-bold">How to generate a random letter in Java?</h3>
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded p-2 text-sm overflow-x-auto"><code>char randomChar = (char) ('a' + new java.util.Random().nextInt(26));</code></pre>
+              <pre className="bg-gray-100 dark:bg-gray-800 rounded p-2 text-sm overflow-x-auto"><code>char randomChar = (char) (&apos;a&apos; + new java.util.Random().nextInt(26));</code></pre>
             </div>
             <div>
               <h3 className="font-bold">How to generate a random 5 letter word in Python?</h3>
               <pre className="bg-gray-100 dark:bg-gray-800 rounded p-2 text-sm overflow-x-auto"><code>import random
 import string
-print(''.join(random.choices(string.ascii_lowercase, k=5)))</code></pre>
+print(&apos;&apos;.join(random.choices(string.ascii_lowercase, k=5)))</code></pre>
             </div>
             <div>
               <h3 className="font-bold">What is a random letter generator?</h3>
