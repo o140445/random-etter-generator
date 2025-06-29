@@ -72,10 +72,10 @@ export default function RandomLetterGenerator() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-8">
+    <div className="max-w-4xl mx-auto md:p-6 p-2 space-y-8 md:space-y-2">
       {/* Result Display */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <div className="flex items-center justify-between mb-4">
+        <div className="items-center justify-between mb-4 md:flex hidden">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
             Generated Result
           </h2>
@@ -116,6 +116,17 @@ export default function RandomLetterGenerator() {
         {copied && (
           <p className="text-green-600 text-sm mt-2">Copied to clipboard!</p>
         )}
+
+        {/* mobile */}
+        <div className="md:hidden flex items-center justify-between mt-2 w-full">
+          <button
+            onClick={generateRandomString}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full"
+          >
+            Generate New
+          </button>
+          
+        </div>
       </div>
 
       {/* Options */}
@@ -220,7 +231,7 @@ export default function RandomLetterGenerator() {
               </label>
             </div>
             
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <input
                 type="checkbox"
                 id="excludeAmbiguous"
@@ -231,7 +242,7 @@ export default function RandomLetterGenerator() {
               <label htmlFor="excludeAmbiguous" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                 Exclude ambiguous characters (&#123; &#125; [ ] ( ) / \ &apos; &quot; ` ~ , ; : . &lt; &gt;)
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
