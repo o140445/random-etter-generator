@@ -3,8 +3,8 @@ import "./globals.css";
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: "Random Letter Generator | Instantly Generate Letters & Numbers Online",
-  description: "Free online random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
+  title: "Random Letter Generator ",
+  description: "Random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
   keywords: "random letter generator, random alphabet generator, randomizer, online tool",
   authors: [{ name: "Random Letter Generator" }],
   creator: "Random Letter Generator",
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.random-letter-generator.com'),
   openGraph: {
-    title: "Random Letter Generator | Instantly Generate Letters & Numbers Online",
-    description: "Free online random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
+    title: "Random Letter Generator",
+    description: "Random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
     url: 'https://www.random-letter-generator.com',
     siteName: 'Random Letter Generator',
     locale: 'en_US',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Random Letter Generator | Instantly Generate Letters & Numbers Online",
-    description: "Free online random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
+    title: "Random Letter Generator",
+    description: "Random letter generator. Instantly generate random letters, numbers, and symbols for passwords, games, and more. Supports A-Z and custom length.",
   },
   robots: {
     index: true,
