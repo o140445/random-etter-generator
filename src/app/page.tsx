@@ -5,6 +5,12 @@ export const metadata = {
   alternates: {
     canonical: "https://www.random-letter-generator.com/",
   },
+  description: "Random letter generator a-z. Click to say “give me a random letter” and get instant results. Great for games, education, or creative tasks.",
+  keywords: [
+    "random letter generator",
+    "give me a random letter",
+    "random letter generator a-z"
+  ],
 };
 
 export default function Home() {
@@ -15,7 +21,7 @@ export default function Home() {
           Random Letter Generator
         </h1>
         <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-8">
-          Instantly generate random letters, numbers, and symbols online. Perfect for passwords, games, and more. Supports A-Z, custom length, and advanced options.
+          Instantly generate random letters, numbers, and symbols online. Perfect for passwords, games, and more. Supports a-z, custom length, and advanced options.
         </p>
         <RandomLetterGenerator />
 
