@@ -29,6 +29,14 @@ export default function BlogHome() {
           <Link href="/blog/random-letters-vs-random-words" className="text-xl font-semibold text-blue-600 hover:underline">Random Letters vs. Random Words: Which to Use?</Link>
           <p className="text-gray-600 dark:text-gray-400">Learn the difference between random letters and random words, and when to use each.</p>
         </li>
+        <li>
+          <Link href="/blog/creative-classroom-activities-using-random-letter-generator" className="text-xl font-semibold text-blue-600 hover:underline">Creative Classroom Activities Using a Random Letter Generator</Link>
+          <p className="text-gray-600 dark:text-gray-400">Discover fun and engaging classroom activities using a random letter generator. Perfect for teachers and parents.</p>
+        </li>
+        <li>
+          <Link href="/blog/how-random-letters-can-boost-your-brainpower" className="text-xl font-semibold text-blue-600 hover:underline">How Random Letters Can Boost Your Brainpower</Link>
+          <p className="text-gray-600 dark:text-gray-400">Learn how using random letters can improve memory, creativity, and cognitive skills with brain-boosting exercises.</p>
+        </li>
       </ul>
     </main>
   );

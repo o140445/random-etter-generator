@@ -33,6 +33,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://www.random-letter-generator.com/blog/creative-classroom-activities-using-random-letter-generator',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.random-letter-generator.com/blog/how-random-letters-can-boost-your-brainpower',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    },
+    {
       url: 'https://www.random-letter-generator.com/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
