@@ -1,17 +1,73 @@
-import Link from 'next/link';
 import RandomLetterGenerator from '@/components/RandomLetterGenerator';
+import FAQAccordion, { FAQItem } from '@/components/FAQAccordion';
+import Footer from '@/components/Footer';
 
-export const metadata = {
-  alternates: {
-    canonical: "https://www.random-letter-generator.com/",
+const faqItems: FAQItem[] = [
+  {
+    question: 'How to generate a random letter in Python?',
+    answer: (
+      <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
+        <code>{`import random\nimport string\nprint(random.choice(string.ascii_letters))`}</code>
+      </pre>
+    ),
   },
-  description: "Random letter generator a-z. Click to say “give me a random letter” and get instant results. Great for games, education, or creative tasks.",
-  keywords: [
-    "random letter generator",
-    "give me a random letter",
-    "random letter generator a-z"
-  ],
-};
+  {
+    question: 'How to generate a random letter in Java?',
+    answer: (
+      <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
+        <code>{`char randomChar = (char) ('a' + new java.util.Random().nextInt(26));`}</code>
+      </pre>
+    ),
+  },
+  {
+    question: 'How to generate a random 5 letter word in Python?',
+    answer: (
+      <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
+        <code>{`import random\nimport string\nprint(''.join(random.choices(string.ascii_lowercase, k=5)))`}</code>
+      </pre>
+    ),
+  },
+  {
+    question: 'What is a random letter generator?',
+    answer: (
+      <p className="text-gray-700 dark:text-gray-300">
+        A random letter generator is an online tool that creates random letters, numbers, or symbols for use in passwords, games, testing, and more.
+      </p>
+    ),
+  },
+  {
+    question: 'How to create strong passwords with random letters?',
+    answer: (
+      <p className="text-gray-700 dark:text-gray-300">
+        Use our generator to create passwords with uppercase letters, lowercase letters, numbers, and symbols. Choose a length of at least 12 characters and avoid similar characters like 'l', '1', 'O', '0' for better security.
+      </p>
+    ),
+  },
+  {
+    question: 'Can I generate random letters for games and activities?',
+    answer: (
+      <p className="text-gray-700 dark:text-gray-300">
+        Yes! Our random letter generator is perfect for creating game codes, word games, educational activities, and creative writing prompts. You can customize the length and character types to suit your needs.
+      </p>
+    ),
+  },
+  {
+    question: 'How to generate random test data for development?',
+    answer: (
+      <p className="text-gray-700 dark:text-gray-300">
+        Use our tool to generate random strings for testing forms, databases, and applications. You can create various lengths and character combinations to test different scenarios and edge cases.
+      </p>
+    ),
+  },
+  {
+    question: 'Is this random letter generator secure?',
+    answer: (
+      <p className="text-gray-700 dark:text-gray-300">
+        Yes, our generator uses cryptographically secure random number generation. All generation happens in your browser, and no data is sent to our servers, ensuring your privacy and security.
+      </p>
+    ),
+  },
+];
 
 export default function Home() {
   return (
@@ -20,16 +76,16 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
           Random Letter Generator
         </h1>
-        <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-8">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-8 px-4">
           Instantly generate random letters, numbers, and symbols online. Perfect for passwords, games, and more. Supports a-z, custom length, and advanced options.
         </p>
-        <RandomLetterGenerator />
+        <RandomLetterGenerator currentLanguage="en" />
 
         <section className="mt-6 p-6">
           <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">How to Use the Random Letter Generator</h2>
           <ol className="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Choose the length and character types (uppercase, lowercase, numbers, symbols).</li>
-            <li>Click <b>Generate New</b> to get a random string.</li>
+            <li dangerouslySetInnerHTML={{__html: "Click <b>Generate New</b> to get a random string."}} />
             <li>Copy the result for use in passwords, games, or testing.</li>
           </ol>
         </section>
@@ -47,53 +103,10 @@ export default function Home() {
 
         <section className="mt-6 p-6">
           <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">FAQ</h2>
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-bold text-lg mb-2">How to generate a random letter in Python?</h3>
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
-                <code>
-{`import random
-import string
-print(random.choice(string.ascii_letters))`}
-                </code>
-              </pre>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">How to generate a random letter in Java?</h3>
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
-                <code>
-{`char randomChar = (char) ('a' + new java.util.Random().nextInt(26));`}
-                </code>
-              </pre>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">How to generate a random 5 letter word in Python?</h3>
-              <pre className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 text-sm overflow-x-auto">
-                <code>
-{`import random
-import string
-print(''.join(random.choices(string.ascii_lowercase, k=5)))`}
-                </code>
-              </pre>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">What is a random letter generator?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                A random letter generator is an online tool that creates random letters, numbers, or symbols for use in passwords, games, testing, and more.
-              </p>
-            </div>
-          </div>
+          <FAQAccordion items={faqItems} />
         </section>
       </div>
-      <footer className="text-center py-6 text-sm text-gray-500 bg-gray-100 w-full h-16">
-        <div className="flex  justify-center items-center gap-2">
-          <Link href="/blog" className="mx-2 hover:underline">Blog</Link>
-          <span className="hidden sm:inline">|</span>
-          <Link href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</Link>
-          <span className="hidden sm:inline">|</span>
-          <Link href="/terms-of-service" className="mx-2 hover:underline">Terms of Service</Link>
-        </div>
-      </footer>
+      <Footer currentLanguage="en" />
     </main>
   );
 }

@@ -1,60 +1,77 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const baseUrl = 'https://www.random-letter-generator.com'
+  const languages = ['', '/de', '/fr', '/it', '/es', '/pt', '/ja', '/ko']
+  const currentDate = new Date()
+
+  // 主页（所有语言版本）
+  const homePages = languages.map(lang => ({
+    url: `${baseUrl}${lang}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 1,
+  }))
+
+  // 博客页面
+  const blogPages = [
     {
-      url: 'https://www.random-letter-generator.com/',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.random-letter-generator.com/blog',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: 'https://www.random-letter-generator.com/blog/why-use-a-random-letter-generator',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/blog/why-use-a-random-letter-generator`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://www.random-letter-generator.com/blog/how-to-generate-random-letters-in-python',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/blog/how-to-generate-random-letters-in-python`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://www.random-letter-generator.com/blog/random-letters-vs-random-words',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/blog/random-letters-vs-random-words`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://www.random-letter-generator.com/blog/creative-classroom-activities-using-random-letter-generator',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/blog/creative-classroom-activities-using-random-letter-generator`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://www.random-letter-generator.com/blog/how-random-letters-can-boost-your-brainpower',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/blog/how-random-letters-can-boost-your-brainpower`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
+  ]
+
+  // 法律页面
+  const legalPages = [
     {
-      url: 'https://www.random-letter-generator.com/privacy-policy',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
-      url: 'https://www.random-letter-generator.com/terms-of-service',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
+  ]
+
+  return [
+    ...homePages,
+    ...blogPages,
+    ...legalPages,
   ]
 } 

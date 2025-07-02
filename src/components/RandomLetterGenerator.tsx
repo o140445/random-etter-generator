@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Language, defaultLanguage } from '../i18n/config';
+import { t } from '../i18n/utils';
 
 interface GeneratorOptions {
   length: number;
@@ -12,7 +14,11 @@ interface GeneratorOptions {
   excludeAmbiguous: boolean;
 }
 
-export default function RandomLetterGenerator() {
+interface RandomLetterGeneratorProps {
+  currentLanguage?: Language;
+}
+
+export default function RandomLetterGenerator({ currentLanguage: propLanguage }: RandomLetterGeneratorProps = {}) {
   const [result, setResult] = useState<string>('');
   const [options, setOptions] = useState<GeneratorOptions>({
     length: 1,
@@ -24,6 +30,7 @@ export default function RandomLetterGenerator() {
     excludeAmbiguous: false,
   });
   const [copied, setCopied] = useState(false);
+  const currentLanguage = propLanguage || defaultLanguage;
 
   const generateRandomString = () => {
     let chars = '';
@@ -70,28 +77,29 @@ export default function RandomLetterGenerator() {
   useEffect(() => {
     generateRandomString();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [propLanguage]);
 
   return (
     <div className="max-w-4xl mx-auto md:p-6 p-2 space-y-8 md:space-y-2">
+      
       {/* Result Display */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
         <div className="items-center justify-between mb-4 md:flex hidden">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Generated Result
+            {t('generatedResult', currentLanguage)}
           </h2>
           <button
             onClick={generateRandomString}
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Generate New
+            {t('generateNew', currentLanguage)}
           </button>
         </div>
         
         <div className="relative">
           <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border-2 border-gray-200 dark:border-gray-600">
             <p className="text-xl font-mono text-gray-900 dark:text-white break-all">
-              {result ||  'Click "Generate New" to create random characters'}
+              {result || t('clickToGenerate', currentLanguage)}
             </p>
           </div>
           
@@ -99,7 +107,7 @@ export default function RandomLetterGenerator() {
             <button
               onClick={copyToClipboard}
               className="absolute top-2 right-2 p-2 bg-gray-200 dark:bg-gray-600 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
-              title="Copy to clipboard"
+              title={t('copyToClipboard', currentLanguage)}
             >
               {copied ? (
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +123,7 @@ export default function RandomLetterGenerator() {
         </div>
         
         {copied && (
-          <p className="text-green-600 text-sm mt-2">Copied to clipboard!</p>
+          <p className="text-green-600 text-sm mt-2">{t('copiedToClipboard', currentLanguage)}</p>
         )}
 
         {/* mobile */}
@@ -124,7 +132,7 @@ export default function RandomLetterGenerator() {
             onClick={generateRandomString}
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full"
           >
-            Generate New
+            {t('generateNew', currentLanguage)}
           </button>
           
         </div>
@@ -133,14 +141,14 @@ export default function RandomLetterGenerator() {
       {/* Options */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          Customize Your Generator
+          {t('customizeGenerator', currentLanguage)}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Length */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Length: {options.length}
+              {t('length', currentLanguage)}: {options.length}
             </label>
             <input
               type="range"
@@ -167,7 +175,7 @@ export default function RandomLetterGenerator() {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
               <label htmlFor="uppercase" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                Uppercase Letters (A-Z)
+                {t('uppercaseLetters', currentLanguage)}
               </label>
             </div>
             
@@ -180,7 +188,7 @@ export default function RandomLetterGenerator() {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
               <label htmlFor="lowercase" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                Lowercase Letters (a-z)
+                {t('lowercaseLetters', currentLanguage)}
               </label>
             </div>
             
@@ -193,7 +201,7 @@ export default function RandomLetterGenerator() {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
               <label htmlFor="numbers" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                Numbers (0-9)
+                {t('numbers', currentLanguage)}
               </label>
             </div>
             
@@ -206,7 +214,7 @@ export default function RandomLetterGenerator() {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
               <label htmlFor="symbols" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                Symbols (!@#$%^&*)
+                {t('symbols', currentLanguage)}
               </label>
             </div>
           </div>
@@ -215,7 +223,7 @@ export default function RandomLetterGenerator() {
         {/* Advanced Options */}
         <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
           <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            Advanced Options
+            {t('advancedOptions', currentLanguage)}
           </h3>
           
           <div className="space-y-4">
@@ -228,7 +236,7 @@ export default function RandomLetterGenerator() {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
               <label htmlFor="excludeSimilar" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                Exclude similar characters (i, l, 1, L, o, 0, O)
+                {t('excludeSimilar', currentLanguage)}
               </label>
             </div>
             
@@ -251,7 +259,7 @@ export default function RandomLetterGenerator() {
       {/* Features */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-          Features & Use Cases
+          {t('featuresUseCases', currentLanguage)}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -261,8 +269,8 @@ export default function RandomLetterGenerator() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Password Generation</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Create strong, secure passwords for your accounts</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('passwordGeneration', currentLanguage)}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{t('passwordDescription', currentLanguage)}</p>
           </div>
           
           <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
@@ -271,8 +279,8 @@ export default function RandomLetterGenerator() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Test Data</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Generate random data for testing and development</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('testData', currentLanguage)}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{t('testDataDescription', currentLanguage)}</p>
           </div>
           
           <div className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
@@ -281,8 +289,8 @@ export default function RandomLetterGenerator() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Games & Activities</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Create random codes for games and activities</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('gamesActivities', currentLanguage)}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{t('gamesDescription', currentLanguage)}</p>
           </div>
         </div>
       </div>
